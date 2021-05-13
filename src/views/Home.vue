@@ -1,35 +1,33 @@
 <template>
-  <div class="home">
+  <div class="home" ref="home">
     <h1>Home</h1>
-    <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
-    <button @click="handleClick">Click Me</button>
+    <PostList :posts="posts" />
   </div>
 </template>
 
 <script>
+import PostList from '@/components/PostList.vue'
 import { ref } from "vue";
 
 export default {
+  components: {PostList},
   name: "Home",
   setup() {
-    
-    console.log(this);
-
-    const p = ref(null);
-
-    let name = "Ros";
-    let age = 30;
-
-    const handleClick = () => {
-      console.log(p.value);
-      p.value.classList.add('test')
-    };
+    const posts = ref([
+      {
+        title: "welcome to the blog",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium perspiciatis, id rerum magni qui suscipit voluptate nemo laborum enim amet accusamus animi architecto sapiente quaerat optio! Reiciendis amet, provident qui eligendi, inventore aliquam nesciunt esse, dolorem quis beatae error labore. Error id odit inventore sunt placeat, nostrum facilis! Odit nemo omnis odio corporis ea, tempore non voluptatem suscipit adipisci alias labore esse, impedit nobis vero saepe ut hic facilis error. Itaque, suscipit illum perferendis nisi incidunt quaerat repellat ipsa, quidem fugiat provident nulla. Autem est reprehenderit soluta inventore ipsa dolorum ipsam obcaecati, consequatur tempora nisi laudantium cupiditate a doloremque eum.",
+        id: 1,
+      },
+      {
+        title: "top 5 CSS tips",
+        body: "lorem ipsum",
+        id: 2,
+      },
+    ]);
 
     return {
-      name,
-      age,
-      handleClick,
-      p,
+      posts,
     };
   },
 };
