@@ -1,5 +1,4 @@
 # my-blog
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1032938c-de73-41c4-855c-3fbdb08934df/deploy-status)](https://app.netlify.com/sites/modest-roentgen-ca5001/deploys)
 
 ## Project setup
 ```
